@@ -5,6 +5,8 @@
   "dependencies": {
     "@fontsource/roboto": "^4.4.5",
     "@material-ui/core": "latest",
+    "@material-ui/data-grid": "^4.0.0-alpha.33",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -52,8 +54,6 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/data-grid": "^4.0.0-alpha.33",
-    "@material-ui/icons": "^4.11.2",
     "eslint-config-airbnb": "^18.2.1",
     "prop-types": "^15.7.2"
   }
