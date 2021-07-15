@@ -5,16 +5,18 @@ import {
   GridToolbarFilterButton,
   GridCellParams,
 } from '@material-ui/data-grid';
+import { useSelector } from 'react-redux';
 import s from './Users.module.css';
-
 import { DeleteModal } from '../AdminPage/DeleteModal/DeleteModal';
 // eslint-disable-next-line import/no-cycle
 import { EditModalUser } from '../AdminPage/EditModal/EditModal';
 import { AddUserModal } from './AddUser/AddUser';
+// eslint-disable-next-line import/named
+import { deleteUser } from './store/usersSlice';
 
 const Users = (props) => {
   // eslint-disable-next-line react/destructuring-assignment
-  const { users } = props.state;
+  const users = useSelector((state) => state.users.list);
   const fields = [
     {
       field: 'id', headerName: 'ID', width: 70, headerAlign: 'center', align: 'center',
@@ -69,7 +71,7 @@ const Users = (props) => {
         const userIndex = users.findIndex((obj) => obj.id === params.id);
         const user = users[userIndex];
 
-        return <DeleteModal item={user} array={users} remove={props.deleteUser} />;
+        return <DeleteModal item={user} onDelete={deleteUser} />;
       },
     },
   ];

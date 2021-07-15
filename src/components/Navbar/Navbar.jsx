@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = (props) => {
+const Navbar = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -80,18 +80,10 @@ const Navbar = (props) => {
         <Tab label="Products" {...a11yProps(1)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Users
-          state={props.state.usersPage}
-          addUser={props.addUser}
-          deleteUser={props.deleteUser}
-        />
+        <Users />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Products
-          state={props.state.productsPage}
-          addProduct={props.addProduct}
-          removeProduct={props.removeProduct}
-        />
+        <Products />
       </TabPanel>
     </div>
   );
